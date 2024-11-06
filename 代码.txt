@@ -1,7 +1,7 @@
 sudo docker run -it \
   -p 12345:12345 \
   -w /etc/app \
-  --name taozizhangmi \
+  --name zhangmi \
   --restart unless-stopped \
   python:3.12 bash -c "
     apt -y update && \
@@ -9,6 +9,6 @@ sudo docker run -it \
     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
     python -m pip install --upgrade pip && \
     pip install pyppeteer Pillow asyncio aiohttp opencv-python-headless ddddocr quart && \
-    wget https://raw.githubusercontent.com/peach028/jdck/main/api.py -O /etc/app/api.py && \
-    wget https://raw.githubusercontent.com/peach028/jdck/main/login.py && \
+    wget https://github.com/491422356/jdck/blob/main/api.py -O /etc/app/api.py && \
+    wget https://github.com/491422356/jdck/blob/main/login.py && \
     python /etc/app/api.py"
